@@ -1,0 +1,88 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0 .25em;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.how ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.how li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: .3em;
+    border: 1px solid #666666;
+    border-radius: .1em;
+    background-color: #ffffff;
+}
+
+.how .how-button {
+    color: #666666;
+    font-size: 2.5rem;
+    padding: .3em;
+    border: 0;
+    border-radius: .1em;
+}
+
+.how .how-button--number-1.how-button--selected {
+    background-color: rgb(153, 153, 153);
+    color: #ffffff;
+}
+
+.how .how-button--number-2.how-button--selected {
+    background-color: rgb(114, 163, 178);
+    color: #ffffff;
+}
+
+.how .how-button--number-3.how-button--selected {
+    background-color: rgb(76, 172, 204);
+    color: #ffffff;
+}
+
+.how .how-button--number-4.how-button--selected {
+    background-color: rgb(38, 181, 229);
+    color: #ffffff;
+}
+
+.how .how-button--number-5.how-button--selected {
+    background-color: rgb(0, 191, 255);
+    color: #ffffff;
+}
+
+.why textarea {
+    margin: 0;
+    height: 50vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.save button {
+    width: 100%;
+}
+
+.history-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

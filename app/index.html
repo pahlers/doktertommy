@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dokter Tommy</title>
+
+    <link rel="stylesheet" href="/weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header>
+    <h1>Dokter Tommy - <span class="today"></span></h1>
+</header>
+<main>
+    <section class="how">
+        <h2>Hoe voel je je?</h2>
+        <ul>
+            <li>
+                <button type="button" class="how-button how-button--number-1"><i class="wi wi-sprinkle"></i></button>
+            </li>
+            <li>
+                <button type="button" class="how-button how-button--number-2"><i class="wi wi-day-fog"></i></button>
+            </li>
+            <li>
+                <button type="button" class="how-button how-button--number-3"><i class="wi wi-day-sunny-overcast"></i></button>
+            </li>
+            <li>
+                <button type="button" class="how-button how-button--number-4"><i class="wi wi-day-windy"></i></button>
+            </li>
+            <li>
+                <button type="button" class="how-button how-button--number-5"><i class="wi wi-day-sunny"></i></button>
+            </li>
+        </ul>
+    </section>
+    <section class="why">
+        <label><h2>Waarom voel je je zo?</h2>
+        <textarea name="why"></textarea></label>
+    </section>
+
+    <section class="save">
+        <button type="button" class="save-button">Bewaren</button>
+    </section>
+
+    <template class="history-item--template">
+        <li>
+            <span class="date"></span>
+            <i class="how wi"></i>
+            <span class="why"></span>
+        </li>
+    </template>
+
+    <section class="history">
+        <h2>History</h2>
+        <ol class="history-list"></ol>
+    </section>
+
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -3,7 +3,6 @@ const express = require('express');
 const server = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const packageFile = require('./package.json');
 
 // Enable cors
 server.use(cors());
@@ -13,6 +12,7 @@ server.use(bodyParser.urlencoded({extended: true})); // for parsing application/
 
 server.all('*', logRequests);
 server.use('/', express.static('app'));
+server.use('/weather-icons', express.static('node_modules/weather-icons'));
 
 module.exports = server;
 

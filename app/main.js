@@ -42,12 +42,14 @@
         }
     }
 
-    function generateDateString() {
+    function generateDateTimeString() {
         const date = new Date();
-        const day = date.getDay();
-        const month = date.getMonth() + 1;
+        const dateNumber = ('' + date.getDate()).padStart(2, '0');
+        const month = ('' + (date.getMonth() + 1)).padStart(2, '0');
+        const hours = ('' + date.getHours()).padStart(2, '0');
+        const minutes = ('' + date.getMinutes()).padStart(2, '0');
 
-        return `${day > 9 ? day : '0' + day}-${month > 9 ? month : '0' + month}-${date.getFullYear()}`;
+        return `${dateNumber}-${month}-${date.getFullYear()} ${hours}:${minutes}`;
     }
 
     function selectHow(event) {
@@ -103,7 +105,7 @@
     }
 
     function getDayData() {
-        const date = generateDateString();
+        const date = generateDateTimeString();
         const selectedElement = document.querySelector('.how-button--selected');
 
         let number;

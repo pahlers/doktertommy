@@ -6,5 +6,5 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/index?launcher=true"
+  "start_url": "/index.html?launcher=true"
 }

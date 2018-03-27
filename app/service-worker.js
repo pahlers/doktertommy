@@ -15,7 +15,8 @@ const cacheKey = 'doktertommy-static-v1';
 const cacheList = [
     '/',
     '/main.css',
-    '/main.js'
+    '/main.js',
+    '/manifest.json'
 ];
 
 /**

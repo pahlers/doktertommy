@@ -1,0 +1,10 @@
+{
+  "name": "Dokter Tommy",
+  "short_name": "prrrr 🐈",
+  "theme_color": "#00bfff",
+  "background_color": "#00bfff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/index?launcher=true"
+}

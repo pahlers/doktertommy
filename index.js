@@ -13,6 +13,7 @@ server.use(bodyParser.urlencoded({extended: true})); // for parsing application/
 server.all('*', logRequests);
 server.use('/', express.static('app'));
 server.use('/weather-icons', express.static('node_modules/weather-icons'));
+server.use('/muicss', express.static('node_modules/muicss/dist'));
 
 module.exports = server;
 

@@ -1,34 +1,53 @@
 (function () {
     console.log('[doktertommy] run');
 
+    const storageKey = 'dokterTommyHistoryList';
+
     init();
 
     function init() {
-        const date = createDateString();
-
-        addEvents(date);
-        addDate(date);
+        enableEvents();
+        enableServiceWorker();
+        fillHistoryFromStorage();
     }
 
-    function addEvents(date) {
+    function enableEvents() {
+        console.log('[doktertommy] enable events');
+
         Array.from(document.querySelectorAll('.how-button'))
             .map(element => element.addEventListener('click', selectHow));
 
         document.querySelector('.save-button')
-            .addEventListener('click', saveThisDay.bind({date}));
-
+            .addEventListener('click', saveThisDay);
     }
 
-    function createDateString() {
+    function enableServiceWorker() {
+        console.log('[doktertommy] enable service worker');
+
+        if ('serviceWorker' in navigator) {
+            console.log('[doktertommy] service worker is supported');
+
+            navigator.serviceWorker.register('service-worker.js', {
+                scope: './'
+            })
+                .then(function (data) {
+                    console.log(`[doktertommy] server worker started`, data);
+                })
+                .catch(function (error) {
+                    console.error(`[doktertommy] server worker didn't work`, error);
+                });
+
+        } else {
+            console.warn(`[doktertommy] server worker isn't supported by browser`);
+        }
+    }
+
+    function generateDateString() {
         const date = new Date();
         const day = date.getDay();
         const month = date.getMonth() + 1;
 
         return `${day > 9 ? day : '0' + day}-${month > 9 ? month : '0' + month}-${date.getFullYear()}`;
-    }
-
-    function addDate(date) {
-        document.querySelector('.today').textContent = date;
     }
 
     function selectHow(event) {
@@ -51,9 +70,69 @@
     }
 
     function saveThisDay() {
-        const {date} = this;
-        const list = document.querySelector('.history-list');
+        const day = getDayData();
+
+        console.log('[doktertommy] save day', day);
+
+        cleanForm();
+        addToHistoryList(day);
+
+        saveInStorage(day);
+    }
+
+    function saveInStorage(day) {
+        let list = JSON.parse(localStorage.getItem(storageKey));
+
+        if (list === null) {
+            list = [];
+        }
+
+        list.push(day);
+
+        localStorage.setItem(storageKey, JSON.stringify(list));
+    }
+
+    function fillHistoryFromStorage() {
+        console.log('[doktertommy] fill history from storage');
+
+        let list = JSON.parse(localStorage.getItem(storageKey));
+
+        if (list !== null) {
+            list.forEach(addToHistoryList);
+        }
+    }
+
+    function getDayData() {
+        const date = generateDateString();
         const selectedElement = document.querySelector('.how-button--selected');
+
+        let number;
+
+        if (selectedElement) {
+            [number] = Array.from(selectedElement.classList)
+                .filter(item => item.startsWith('how-button--number-'))
+                .map(item => parseInt(item.slice(-1), 10));
+
+        }
+
+        const description = document.querySelector('.why textarea').value;
+
+        return {
+            date,
+            number,
+            description
+        };
+    }
+
+    function cleanForm() {
+        removeHowSelected();
+        document.querySelector('.why textarea').value = '';
+    }
+
+    function addToHistoryList({date, number, description}) {
+        const list = document.querySelector('.history-list');
+        const template = document.querySelector('.history-item--template').content;
+        const clone = document.importNode(template, true);
 
         const howIconNames = [
             'wi-sprinkle',
@@ -62,28 +141,13 @@
             'wi-day-windy',
             'wi-day-sunny'
         ];
-        let howIconName = '';
 
-        if (selectedElement) {
-            const [howNumber] = Array.from(selectedElement.classList)
-                .filter(item => item.startsWith('how-button--number-'))
-                .map(item => item.slice(-1));
+        clone.querySelector('.date').textContent = date;
+        clone.querySelector('.why').textContent = description;
 
-            howIconName = howIconNames[howNumber - 1];
+        if (number !== undefined) {
+            clone.querySelector('.how').classList.add(howIconNames[number - 1]);
         }
-
-        const template = document.querySelector('.history-item--template').content;
-        const dateElement = template.querySelector('.date');
-        const howElement = template.querySelector('.how');
-        const whyElement = template.querySelector('.why');
-
-        dateElement.textContent = date;
-
-        howElement.classList.add(howIconName);
-
-        whyElement.textContent = document.querySelector('.why textarea').value;
-
-        const clone = document.importNode(template, true);
 
         list.insertBefore(clone, list.firstChild);
     }

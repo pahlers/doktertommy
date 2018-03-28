@@ -27,6 +27,7 @@ const cacheList = [
 const cacheWhitelist = [
     '/muicss/*',
     '/weather-icons/*',
+    '/images/*',
     ...cacheList
 ];
 

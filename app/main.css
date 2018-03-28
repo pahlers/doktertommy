@@ -9,10 +9,15 @@ body {
     box-sizing: border-box;
 }
 
-.cat{
-    font-size: 2em;
-    vertical-align: top;
-    float: right;
+header{
+    position: relative;
+}
+
+.logo{
+    height: 2em;
+    position: absolute;
+    top: -.25em;
+    right: .25em;
 }
 
 .cat:before{

@@ -20,18 +20,6 @@ header{
     right: .25em;
 }
 
-.cat:before{
-    content: 'prrrr prrr';
-    font-size: 0.1em;
-    position: relative;
-    top: -4em;
-}
-
-.hidden {
-    display: none;
-    visibility: hidden;
-}
-
 .how ul {
     display: flex;
     align-items: stretch; /* Default */

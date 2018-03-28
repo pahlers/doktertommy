@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dokter Tommy 🐈</title>
 
@@ -16,46 +16,57 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/152x152.png">
     <link rel="apple-touch-icon" sizes="192x192" href="images/192x192.png">
-    <link rel="icon" type="image/png" sizes="128x128"  href="images/128x128.png">
-    <link rel="icon" type="image/png" sizes="144x144"  href="images/144x144.png">
-    <link rel="icon" type="image/png" sizes="152x152"  href="images/152x152.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/192x192.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="images/128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="images/144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="images/152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/192x192.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <header>
-    <h1>Dokter Tommy <img class="logo" src="images/final.svg" /></h1>
+    <h1>Dokter Tommy <img class="logo" src="images/final.svg" alt=""/></h1>
 </header>
 <main>
     <section class="how">
         <h2>Hoe voel je je?</h2>
         <ul>
             <li>
-                <button type="button" class="how-button how-button--number-1"><i class="wi wi-sprinkle"></i></button>
+                <button type="button" class="how-button how-button--number-1" aria-label="Regenachtig">
+                    <i class="wi wi-sprinkle"></i>
+                </button>
             </li>
             <li>
-                <button type="button" class="how-button how-button--number-2"><i class="wi wi-day-fog"></i></button>
+                <button type="button" class="how-button how-button--number-2" aria-label="Druilerig">
+                    <i class="wi wi-day-fog"></i>
+                </button>
             </li>
             <li>
-                <button type="button" class="how-button how-button--number-3"><i class="wi wi-day-sunny-overcast"></i></button>
+                <button type="button" class="how-button how-button--number-3" aria-label="Hier en daar bewolkt">
+                    <i class="wi wi-day-sunny-overcast"></i>
+                </button>
             </li>
             <li>
-                <button type="button" class="how-button how-button--number-4"><i class="wi wi-day-windy"></i></button>
+                <button type="button" class="how-button how-button--number-4" aria-label="Zonnig met een koude wind">
+                    <i class="wi wi-day-windy"></i>
+                </button>
             </li>
             <li>
-                <button type="button" class="how-button how-button--number-5"><i class="wi wi-day-sunny"></i></button>
+                <button type="button" class="how-button how-button--number-5" aria-label="Zonnig">
+                    <i class="wi wi-day-sunny"></i>
+                    <span class="hidden">Heel goed</span>
+                </button>
             </li>
         </ul>
     </section>
     <section class="why mui-textfield">
         <h2>Waarom voel je je zo?</h2>
-        <textarea name="why" title="waarom voel je je zo"></textarea>
+        <textarea name="why" title="Waarom voel je je zo?"></textarea>
     </section>
 
     <section class="save">
-        <button type="button" class="save-button mui-btn mui-btn--fab mui-btn--primary">+</button>
+        <button type="button" class="save-button mui-btn mui-btn--fab mui-btn--primary" aria-label="Bewaar">+</button>
     </section>
 
     <template class="history-item--template">

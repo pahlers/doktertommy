@@ -39,6 +39,6 @@ De site/app is een [Prograssive web app](https://developers.google.com/web/progr
 - manifest.json.
 
 ### Todo
-- Export/import functie zodat je zelf een backup van gegevens kunt maken. Erg handig als je van telefoon wisselt.
-- Notificatie waarin Dokter Tommy vraagt hoe het met je gaat.
-- Verfijnen van look-and-feel
+- Export/import functie zodat je zelf een backup van gegevens kunt maken. Erg handig als je van telefoon wisselt;
+- Notificatie waarin Dokter Tommy vraagt hoe het met je gaat;
+- Verfijnen van look-and-feel.

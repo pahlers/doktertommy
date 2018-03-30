@@ -6,7 +6,9 @@
   "repository": "https://github.com/pahlers/doktertommy",
   "scripts": {
     "serve": "./server.js",
-    "watch": "nodemon --ignore 'app/*.js' ./server.js"
+    "watch": "nodemon --ignore 'app/*.js' ./server.js",
+    "preinstall": "rm -rf app/muicss && rm -rf app/weather-icons",
+    "postinstall": "mkdir app/muicss && cp -r node_modules/muicss/dist/* app/muicss && cp -r node_modules/weather-icons app/"
   },
   "author": "Peter Ahlers",
   "license": "ISC",

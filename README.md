@@ -35,7 +35,7 @@ Als je merkt dat je alleen maar slechte dagen hebt. Zoek dan professionele hulp.
 ## Techniek
 
 De site/app is een [Prograssive web app](https://developers.google.com/web/progressive-web-apps/). Hiermee kun je bereiken dat je site kan worden geinstalleerd als een app. Technieken die zijn gebruikt:
-- html, css en jsvascript;
+- html, css en javascript;
 - localStorage;
 - service worker;
 - manifest.json

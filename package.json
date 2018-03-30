@@ -1,8 +1,9 @@
 {
   "name": "doktertommy",
   "version": "1.0.0",
-  "description": "De gevoels dokter (poes)",
+  "description": "De dokter die altijd naar je vraagt.",
   "main": "index.js",
+  "repository": "https://github.com/pahlers/doktertommy",
   "scripts": {
     "serve": "./server.js",
     "watch": "nodemon --ignore 'app/*.js' ./server.js"

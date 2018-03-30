@@ -26,12 +26,9 @@ Tommy onze kat. Altijd benaderbaar en in je geinteresseerd als je hem goed kent.
 
 ## Gaat slecht met je?
 
-Als je merkt dat je alleen maar slechte dagen hebt. Zoek dan professionele hulp. Deze mensen zullen je helpen. Meer informatie hierover vind je op https://www.113.nl/.
+Als je merkt dat je alleen maar slechte dagen hebt. Zoek dan professionele hulp, bijvoorbeeld je huisarts. Deze mensen zullen je helpen. 
 
-## Todo
-- Export/import functie zodat je zelf een backup van gegevens kunt maken. Erg handig als je van telefoon wisselt.
-- Notificatie waarin Dokter Tommy vraagt hoe het met je gaat.
-- Verfijnen van look-and-feel
+Heb je gedachten aan zelfdoding? Kijk dan op https://www.113.nl/.
 
 ## Techniek
 
@@ -39,4 +36,9 @@ De site/app is een [Prograssive web app](https://developers.google.com/web/progr
 - html, css en javascript;
 - localStorage;
 - service worker;
-- manifest.json
+- manifest.json.
+
+### Todo
+- Export/import functie zodat je zelf een backup van gegevens kunt maken. Erg handig als je van telefoon wisselt;
+- Notificatie waarin Dokter Tommy vraagt hoe het met je gaat;
+- Verfijnen van look-and-feel.

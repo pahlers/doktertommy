@@ -31,6 +31,7 @@ Als je merkt dat je alleen maar slechte dagen hebt. Zoek dan professionele hulp.
 ## Todo
 - Export/import functie zodat je zelf een backup van gegevens kunt maken. Erg handig als je van telefoon wisselt.
 - Notificatie waarin Dokter Tommy vraagt hoe het met je gaat.
+- Verfijnen van look-and-feel
 
 ## Techniek
 

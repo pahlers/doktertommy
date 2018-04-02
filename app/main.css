@@ -9,8 +9,14 @@ body {
     box-sizing: border-box;
 }
 
+.hidden{
+    display: none !important;
+    visibility: hidden !important;
+}
+
 header{
     position: relative;
+    margin-bottom: 1.5em;
 }
 
 .logo{
@@ -84,9 +90,18 @@ header{
     padding: 0;
 }
 
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.settings-button{
+    vertical-align: baseline;
+}
 .save-button{
-    float: right;
-    font-size: 2em;
+    vertical-align: baseline;
 }
 
 .history pre{
@@ -94,4 +109,27 @@ header{
     width: 100%;
     white-space: pre-wrap;
     overflow-wrap: break-word;
+}
+
+.settings .settings-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.settings .notification-permission-failed{
+    background-color: #F44336;
+    color: #ffffff;
+    padding: .25em;
+    border-radius: 2px;
+}
+
+.settings .notification-time-hours,
+.settings .notification-time-minutes{
+    display: inline-block;
+    width: auto;
+}
+
+.settings .data{
+    height: 50vh;
 }

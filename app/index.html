@@ -6,7 +6,8 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dokter Tommy 🐈</title>
-    <meta name="Description" content="Dokter Tommy 🐈 is een applicatie voor mensen met een depressie om hun gemoeds toestand bij te houden">
+    <meta name="Description"
+          content="Dokter Tommy 🐈 is een applicatie voor mensen met een depressie om hun gemoedstoestand bij te houden.">
 
     <link rel="stylesheet" href="muicss/css/mui.min.css">
     <link rel="stylesheet" href="weather-icons/css/weather-icons.min.css" type="text/css">
@@ -26,12 +27,13 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+
 <header>
     <h1>Dokter Tommy <img class="logo" src="images/final.svg" alt=""/></h1>
 </header>
-<main>
-    <section class="how">
-        <h2>Hoe voel je je?</h2>
+
+<main class="questions">
+    <section class="how mui-textfield">
         <ul>
             <li>
                 <button type="button" class="how-button how-button--number-1" aria-label="Regenachtig">
@@ -59,13 +61,16 @@
                 </button>
             </li>
         </ul>
-    </section>
-    <section class="why mui-textfield">
-        <h2>Waarom voel je je zo?</h2>
-        <textarea name="why" title="Waarom voel je je zo?"></textarea>
+        <label>Hoe voel je je?</label>
     </section>
 
-    <section class="save">
+    <section class="why mui-textfield mui-textfield--float-label">
+        <textarea name="why" title="Waarom voel je je zo?"></textarea>
+        <label>Waarom voel je je zo?</label>
+    </section>
+
+    <section class="menu">
+        <button type="button" class="settings-button mui-btn mui-btn--accent">Settings</button>
         <button type="button" class="save-button mui-btn mui-btn--fab mui-btn--primary" aria-label="Bewaar">+</button>
     </section>
 
@@ -81,10 +86,79 @@
         <h2>Geschiedenis</h2>
         <ol class="history-list"></ol>
     </section>
-
-
 </main>
 
+<aside class="settings hidden">
+    <div class="settings-header">
+        <h2>Settings</h2>
+        <button type="button" class="leave-settings-button mui-btn">Terug</button>
+    </div>
+
+    <section class="notification hidden">
+        <h3>Herinnering</h3>
+
+        <p>
+            Elke dag wil Dokter Tommy je vragen wat je van de dag vind.<br/>
+            Wil je dat? Zo ja, zet herinnering op <strong>aan</strong> en accepteer <strong>notificaties</strong>.
+        </p>
+
+        <p>
+            Je kunt de herinnering altijd op <strong>uit</strong> zetten.
+        </p>
+
+        <div class="notification-permission-failed hidden">
+            <h3>Oops</h3>
+
+            DokterTommy heeft <strong>notificaties</strong> nodig om je een herinnering te kunnen sturen. Wil je een
+            herinnering
+            krijgen? Zet dan in de browser settings <strong>notificaties</strong> aan voor
+            <i>https://doktertommy.nl/</i>.
+        </div>
+
+        <div class="notification-status mui-radio">
+            <label>
+                <input type="radio"
+                       name="notification"
+                       value="on">
+                aan
+            </label>
+            <label>
+                <input type="radio"
+                       name="notification"
+                       value="off"
+                       checked>
+                uit
+            </label>
+        </div>
+
+        <div class="mui-textfield">
+            <input title="tijd uren" type="number" value="" min="0" max="23" step="1"
+                   class="notification-time-hours ">:<input title="tijd minuten" type="number"
+                                                            value=""
+                                                            min="0" max="59"
+                                                            step="1"
+                                                            class="notification-time-minutes">
+            <label>Hoelaat wil je de notificatie?</label>
+        </div>
+    </section>
+
+    <section class="backup">
+        <h2>Backup</h2>
+
+        <p>
+            Je maakt een backup van je data door de onderstaande data te <strong>kopieren</strong> en deze in een tekst
+            bestand te bewaren. De backup kun je terugzetten door de data in het data tekstveld te
+            <strong>plakken</strong>.
+        </p>
+
+        <div class="mui-textfield mui-textfield--float-label">
+            <textarea name="data" title="Data" class="data"></textarea>
+            <label>Data</label>
+        </div>
+    </section>
+</aside>
+
+<script src="muicss/js/mui.min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
